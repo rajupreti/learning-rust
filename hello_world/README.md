@@ -94,6 +94,29 @@ The first build is slow. After that it only recompiles what changed.
 | `cargo build` | Compile the code |
 | `cargo run` | Compile + run in one step |
 | `cargo check` | Check for errors without fully compiling (faster) |
+| `cargo doc` | Generate HTML documentation for your project |
+| `cargo doc --open` | Generate docs and open them in the browser |
+
+---
+
+## cargo doc
+
+Running `cargo doc` generates a website-style HTML documentation page for your project from your code.
+
+- Output is saved to `target/doc/hello_world/index.html`
+- Use `cargo doc --open` to build and open in the browser automatically
+- Right now it's mostly empty because `main.rs` has no doc comments yet
+
+When you add `///` comments above functions, Cargo turns them into formatted docs:
+
+```rust
+/// Adds two numbers together
+fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+```
+
+This is similar to Python docstrings, but Cargo generates a full browsable website from them automatically. Dependencies you add also get their docs generated here so you can read them offline.
 
 ---
 
