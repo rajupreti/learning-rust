@@ -106,6 +106,16 @@ fn main() {
         _ => println!("Invalid day"), // _ is used to catch all other values that are not matched by the previous patterns
     }
     println!("{}", "-".repeat(100));
+    let mut counter = 1;
+    let result = loop {
+        println!("{} x {} = {}", 17, counter, 17 * counter);
+        if counter >= 10 {
+            break counter; // we can also return a value from a loop using the break statement
+        }
+        counter += 1;
+    };
+    println!("The number of runs is: {}", result);
+    println!("{}", "-".repeat(100));
 
 }
 
