@@ -297,6 +297,33 @@ Python doesn't care about this — Rust does, because types are locked at compil
 
 ---
 
+### Loops and Returning Values
+
+In Rust, `while` and `for` loops **cannot** return a value — they always return `()` (nothing). Trying to assign their result causes an error.
+
+Only `loop` can return a value, using `break`:
+
+```rust
+let mut number = 0;
+let result = loop {
+    number += 1;
+    if number == 10 {
+        break number; // returns number out of the loop
+    }
+};
+println!("Stopped at: {}", result); // prints 10
+```
+
+| Loop type | Can return a value? |
+|---|---|
+| `while` | No — always returns `()` |
+| `for` | No — always returns `()` |
+| `loop` | Yes — via `break value` |
+
+Python loops can never return a value directly — Rust's `loop` + `break value` is unique to Rust.
+
+---
+
 ### String Differences from Python
 
 Rust does **not** support Python-style string tricks:

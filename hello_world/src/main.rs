@@ -116,6 +116,26 @@ fn main() {
     };
     println!("The number of runs is: {}", result);
     println!("{}", "-".repeat(100));
-
+    // while loops
+    let mut number = 1;
+    while number <= 15 {
+        if number == 10 {
+            println!("{} x {} = Don't be stoopid", 67, number);
+            number += 1;
+            continue; // skip the rest of the code in the loop and move to the next iteration
+        }
+        println!("{} x {} = {}", 67, number, 67 * number);
+        number += 1;
+    };
+    println!("{}", "-".repeat(100));
+    // for loops
+    for number in 1..=11 { // this will loop from 1 to 10 inclusive, if we want to loop from 1 to 9 we can use 1..10
+        if number == 11 {
+            println!("{} x {} = Oops, my bad", 9, number);
+            break; // this will exit the loop when number is 11 (i didnt need to use this because the loop will automatically exit when number is 11 but i just wanted to show how to use break statement)
+        }
+        println!("{} x {} = {}", 9, number, 9 * number);
+    }
+    println!("{}", "-".repeat(100));
 }
 
