@@ -12,4 +12,9 @@ fn main() {
     /*
     Get rickrolled b*tch
     */
+    let name = "Lukas Graham";
+    let age = 7;
+    println!("Once I was {} years old.\nMy mama told me go make yourself some friends or you will be lonely song by{}", age, name);
+    // cant use , or + to concatenate strings in Rust
 }
+
