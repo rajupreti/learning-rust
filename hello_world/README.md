@@ -214,6 +214,24 @@ let my_text: &str = "Hello";
 
 ---
 
+### Constants
+
+Constants are like variables but can **never** change — not even with `mut`. They must always have an explicit type and by convention are written in ALL_CAPS:
+
+```rust
+const S: i32 = 7985;
+println!("S will always be: {}", S);
+```
+
+- Must always have a type annotation (`: i32`, `: f64`, etc.)
+- Must be uppercase — Rust will warn you if not
+- Can be declared anywhere in the program, including outside functions
+- Can never be reassigned, ever
+
+**Python equivalent:** like a variable you just never reassign, but Rust enforces it at compile time.
+
+---
+
 ### String Differences from Python
 
 Rust does **not** support Python-style string tricks:

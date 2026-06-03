@@ -60,6 +60,8 @@ fn main() {
         The &str type is used to store a sequence of characters (text). String values must be surrounded by double quote
     Booleans - True or false values (bool)
      */
-     println!("{}", "-".repeat(100));
+    println!("{}", "-".repeat(100));
+    const S: i32 = 7985; // constants are immutable by default and must be annotated with a type always be uppercase or warning
+    println!("S will always be: {}", S);
 }
 
