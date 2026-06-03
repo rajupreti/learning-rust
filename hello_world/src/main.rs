@@ -93,7 +93,18 @@ fn main() {
     println!("{}", result);
     */
     println!("{}", "-".repeat(100));
-
+    // rust matches work like switch statements in c++
+    let day = 5;
+    match day {
+        1 => println!("I dont wanna go to the office day"),
+        2 => println!("I think I have to go to the office day"),
+        3 => println!("Weekend in 2 days day"),
+        4 => println!("Lets get drunk and take télétraviail tomorrow day"),
+        5 => println!("F*ck it, its the almost weekend we will see Monday day"),
+        6 => println!("I slept all day day"),
+        7 => println!("Its sunday already, should I call in sick tomorrow day"),
+        _ => println!("Invalid day"), // _ is used to catch all other values that are not matched by the previous patterns
+    }
     println!("{}", "-".repeat(100));
 
 }
