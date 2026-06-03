@@ -169,6 +169,51 @@ println!("Once I was {} years old.", age);
 
 ---
 
+### Mutable Variables
+
+By default, variables in Rust are **immutable** (can't be changed). To allow changes, use `mut`:
+
+```rust
+let mut name = "Raj";
+name = "Slim Shady"; // works because of mut
+```
+
+Without `mut`, trying to reassign throws a compile error. Python variables are always mutable — Rust forces you to be explicit.
+
+---
+
+### Data Types
+
+Rust can infer types automatically, or you can declare them explicitly:
+
+```rust
+// inferred
+let my_num = 5;
+let my_double = 5.99;
+let my_letter = 'D';
+let my_bool = true;
+let my_text = "Hello";
+
+// explicit
+let my_num: i32 = 5;
+let my_double: f64 = 5.99;
+let my_letter: char = 'D';
+let my_bool: bool = true;
+let my_text: &str = "Hello";
+```
+
+| Type | What it stores | Example |
+|---|---|---|
+| `i32` | Whole numbers, positive or negative | `5`, `-456` |
+| `f64` | Decimal numbers | `5.99`, `3.14` |
+| `char` | Single character — use single quotes | `'D'`, `'$'` |
+| `bool` | True or false | `true`, `false` |
+| `&str` | Text (string) — use double quotes | `"Hello"` |
+
+**Key difference from Python:** Python figures out types at runtime and lets them change. Rust locks the type at compile time — a variable declared as `i32` can never hold text.
+
+---
+
 ### String Differences from Python
 
 Rust does **not** support Python-style string tricks:
