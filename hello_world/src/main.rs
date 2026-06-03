@@ -63,5 +63,19 @@ fn main() {
     println!("{}", "-".repeat(100));
     const S: i32 = 7985; // constants are immutable by default and must be annotated with a type always be uppercase or warning
     println!("S will always be: {}", S);
+
+    println!("{}", "-".repeat(100));
+    let x: i32 =  6;
+    let y: i32 = 7;
+    let z: bool = x > y;
+    println!("Is {} greater than {}?\n{}", x, y, z);
+    // Boolean values are often used in if statements to decide what code should run
+    println!("According to the if else statement:");
+    if z {
+        println!("{} is greater than {}", x, y);
+    } else {
+        println!("{} is not greater than {}", x, y);
+    }
+    println!("{}", "-".repeat(100));
 }
 

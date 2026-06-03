@@ -232,6 +232,42 @@ println!("S will always be: {}", S);
 
 ---
 
+### Booleans and If/Else
+
+A boolean stores the result of a comparison — `true` or `false`:
+
+```rust
+let x: i32 = 6;
+let y: i32 = 7;
+let z: bool = x > y;
+println!("Is {} greater than {}?\n{}", x, y, z); // prints false
+```
+
+Booleans are commonly used in `if/else` to decide what code runs:
+
+```rust
+if z {
+    println!("{} is greater than {}", x, y);
+} else {
+    println!("{} is not greater than {}", x, y);
+}
+```
+
+**Differences from Python:**
+- No parentheses around the condition — `if z {` not `if (z):`
+- Curly braces `{}` instead of indentation to define blocks
+- No colon `:` after the condition
+
+| Python | Rust |
+|---|---|
+| `if x > y:` | `if x > y {` |
+| `    print("yes")` | `    println!("yes");` |
+| `else:` | `} else {` |
+| `    print("no")` | `    println!("no");` |
+| *(end of indent)* | `}` |
+
+---
+
 ### String Differences from Python
 
 Rust does **not** support Python-style string tricks:
