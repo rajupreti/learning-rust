@@ -21,5 +21,10 @@ fn main() {
     println!("Once I was {} years old.\nMy mama told me go make yourself some friends or you will be lonely song by {}", age, name);
     // cant use , or + to concatenate strings in Rust
     println!("{}", "-".repeat(100));
+    // to change variables in Rust we need to use the mut keyword
+    let mut name = "Raj";
+    println!("My name is {}", name);
+    name = "Slim Shady"; // if we try to change the value of name without using mut keyword it will throw an error
+    println!("My name is {}", name);
 }
 
