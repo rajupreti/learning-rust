@@ -1,3 +1,8 @@
+// fn main() {
+//     println!("Hello, world! from 🦀");
+// }
+
 fn main() {
-    println!("Hello, world! from 🦀");
+    let name = "Raj";
+    println!("Hello, {}! from 🦀", name);
 }
