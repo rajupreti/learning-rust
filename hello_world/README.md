@@ -266,6 +266,35 @@ if z {
 | `    print("no")` | `    println!("no");` |
 | *(end of indent)* | `}` |
 
+### else if
+
+Chain multiple conditions with `else if`:
+
+```rust
+let guess: i32 = 1;
+if guess == S {
+    println!("Its her");
+} else if guess / S == 0 {
+    println!("It might be her");
+} else {
+    println!("Its not her");
+}
+```
+
+### if/else Must Return the Same Type
+
+In Rust, if you use `if/else` to assign a value, both branches **must return the same type**. Mixing types causes a compile error:
+
+```rust
+// this works
+let result = if number < 10 { "Too small" } else { "Big enough" };
+
+// this FAILS — one branch is &str, the other is i32
+let result = if number < 10 { "Too small" } else { 100 };
+```
+
+Python doesn't care about this — Rust does, because types are locked at compile time.
+
 ---
 
 ### String Differences from Python

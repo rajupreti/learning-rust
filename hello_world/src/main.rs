@@ -77,5 +77,24 @@ fn main() {
         println!("{} is not greater than {}", x, y);
     }
     println!("{}", "-".repeat(100));
+    let guess: i32 = 1;
+    if guess == S {
+        println!("Its her");
+    } else if guess / S == 0 {
+        println!("It might be her");
+    } else {
+        println!("Its not her");
+    }
+    /*
+    The value from if and else must be the same type, like two pieces of text or two numbers.
+    When you mix types, like a string and an integer, you'll get an error:
+    let number = 5;
+    let result = if number < 10 { "Too small" } else { 100 };
+    println!("{}", result);
+    */
+    println!("{}", "-".repeat(100));
+
+    println!("{}", "-".repeat(100));
+
 }
 
