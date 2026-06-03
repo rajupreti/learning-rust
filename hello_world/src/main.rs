@@ -1,8 +1,13 @@
 // fn main() {
 //     println!("Hello, world! from 🦀");
 // }
+fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
 
 fn main() {
+    // let start = std::time::Instant::now();
     println!("{}", "-".repeat(100));
     let name = "Raj";
     println!("Hello, world! from {} in 🦀", name);
@@ -137,5 +142,9 @@ fn main() {
         println!("{} x {} = {}", 9, number, 9 * number);
     }
     println!("{}", "-".repeat(100));
+    let result = add(6, 9);
+    println!(" 6 + 9 = {}", result);
+    println!("{}", "-".repeat(100));
+    // println!("Rust execution time: {:.4} ms", start.elapsed().as_secs_f64() * 1000.0);
 }
 
