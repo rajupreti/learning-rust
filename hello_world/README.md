@@ -120,6 +120,72 @@ This is similar to Python docstrings, but Cargo generates a full browsable websi
 
 ---
 
+## Rust Basics Learned in main.rs
+
+### Variables
+
+```rust
+let name = "Raj";
+let age = 7;
+```
+
+Variables are declared with `let`. Rust infers the type automatically.
+
+---
+
+### Printing
+
+`println!` prints and moves to the next line. `print!` stays on the same line.
+
+```rust
+println!("Hello, {}! from 🦀", name);  // prints with newline
+print!("Never back down never what? "); // no newline — next print continues on same line
+```
+
+Use `\n` inside a string to manually add a new line:
+
+```rust
+print!("\nNever gonna give you up!\nNever gonna let you down!");
+```
+
+**`{}` is the placeholder** for values — like `f""` or `.format()` in Python:
+
+```rust
+println!("Once I was {} years old.", age);
+// Python equivalent: print(f"Once I was {age} years old.")
+```
+
+---
+
+### Comments
+
+```rust
+// single line comment
+
+/*
+   multi line comment
+*/
+```
+
+---
+
+### String Differences from Python
+
+Rust does **not** support Python-style string tricks:
+
+| Python | Rust equivalent |
+|---|---|
+| `"-" * 100` | `"-".repeat(100)` |
+| `"hello" + "world"` | cannot use `+` inside `println!` — write it as one string |
+
+To print a repeated string:
+```rust
+println!("{}", "-".repeat(100));
+// {} is needed because println! always requires a format string first
+```
+
+---
+
 ## What I Learned
 
 - Rust and Cargo are separate tools but come bundled together via rustup
@@ -128,3 +194,6 @@ This is similar to Python docstrings, but Cargo generates a full browsable websi
 - The borrow checker is Rust's unique feature that enforces memory safety
 - Rust errors happen at compile time, not at runtime like Python
 - `cargo run` = build + run in one command
+- `println!` needs `{}` as a placeholder — you can't drop values in directly
+- Use `print!` instead of `println!` to stay on the same line
+- String repetition is `.repeat(n)` not `* n` like Python
