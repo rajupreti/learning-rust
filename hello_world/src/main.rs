@@ -10,6 +10,6 @@ fn main() {
     print!("Never give up!"); // This will print on the same line as the previous print statement
     print!("\nNever gonna give you up!\nNever gonna let you down!"); // This will move to the next line after the previous print statements
     /*
-    Get rickrolled b*ch
+    Get rickrolled b*tch
     */
 }
