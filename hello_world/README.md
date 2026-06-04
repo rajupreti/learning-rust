@@ -324,6 +324,72 @@ Python loops can never return a value directly — Rust's `loop` + `break value`
 
 ---
 
+### Strings
+
+Rust has two string types:
+
+| Type | What it is | Example |
+|---|---|---|
+| `&str` | Fixed string slice — can't grow or change | `"Hello"` |
+| `String` | Growable, owned string — can be modified | `String::from("Hello")` |
+
+Create a `String` from text two ways:
+```rust
+let s1 = String::from("Hello");
+let s2 = "Hello".to_string();
+```
+
+---
+
+### Combining Strings
+
+**Using `+`** — moves the left side, borrows the right:
+```rust
+let text1 = String::from("6");
+let text2 = String::from("9");
+let text3 = text1 + &text2; // text1 is gone after this, text2 still works
+```
+
+`&` before `text2` means borrow — lend it without giving ownership away. The `+` operator is defined as `String + &str` only. After `+`, `text1` is moved (consumed) and can't be used again.
+
+**Using `format!` (recommended)** — nobody loses ownership:
+```rust
+let text1 = String::from("6");
+let text2 = String::from("9");
+let text4 = format!("{}{}", text1, text2); // both text1 and text2 still usable
+```
+
+**Using `.push_str()`** — append to a mutable string:
+```rust
+let mut text5 = String::from("6");
+text5.push_str("9!"); // text5 is now "69!"
+```
+
+---
+
+### `println!` vs `format!`
+
+| | `println!` | `format!` |
+|---|---|---|
+| Prints to terminal | Yes | No |
+| Returns a value | No — returns `()` | Yes — returns a `String` |
+
+`println!` always returns `()` (nothing). You **cannot** assign it to a variable and use it:
+
+```rust
+// WRONG — forlen is (), has no .len()
+let forlen = println!("hello");
+println!("{}", forlen.len()); // error
+
+// RIGHT — use format! to get a String back
+let forlen = format!("hello");
+println!("{}", forlen.len()); // works — prints 5
+```
+
+Use `format!` whenever you need to build a string to store or measure. Use `println!` just to print.
+
+---
+
 ### String Differences from Python
 
 Rust does **not** support Python-style string tricks:

@@ -145,6 +145,25 @@ fn main() {
     let result = add(6, 9);
     println!(" 6 + 9 = {}", result);
     println!("{}", "-".repeat(100));
+    /*
+    &str - is called "string slices", and is used for fixed text like "Hello"
+    String - used when you need a string that can change
+    You can create a String from a string literal using the to_string() method or the String::from() function
+    */
+    let text1 = "6".to_string();
+    let text2 = String::from("9");
+    let text3 = text1 + &text2; //format! is often the preferred choice than using + for combining strings.
+    let text1 = String::from("6"); //re-defining it again as the ownership of the variable text1 is gone
+    let text4 = format!("{}{}", text1,text2);
+    println!("{}! hehe", text3);
+    println!("{}! hehe", text4);
+    // println!("{}", text2);
+    println!("{}", "-".repeat(100));
+    let mut text5 = String::from("6");
+    text5.push_str("7!😛"); // Use push() to add one character: word.push('<word>');
+    println!("{}",text5);
+    println!("Length of the 69 joke is: {}", text4.len());
+    println!("{}", "-".repeat(100));
     // println!("Rust execution time: {:.4} ms", start.elapsed().as_secs_f64() * 1000.0);
 }
 
