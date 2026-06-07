@@ -164,6 +164,32 @@ fn main() {
     println!("{}",text5);
     println!("Length of the 69 joke is: {}", text4.len());
     println!("{}", "-".repeat(100));
+    /*
+    When we assign a to b, the ownership moves. This means only b can use the value now, because a is no longer valid.
+    But simple types like numbers, characters and booleans are copied, not moved.
+    This means you can still use the original variable after assigning it to another:
+    */
+    let a = 67;
+    let b = a;
+    println!("a = {}", a);  // Works
+    println!("b = {}", b);
+    // if you really want to keep the original value and also assign it to another variable, you can use the .clone()
+    let a = String::from("Hello darkness my old friend!");
+    let b = a.clone(); // Now both have the same value
+    println!("a = {}", a);  // Works
+    println!("b = {}", b);  // Works
+    println!("{}", "-".repeat(100));
+    // Borrowing
+    // If you want to change a value through a reference, you need to make the reference mut
+    let mut meme = String::from("six");
+    let new_meme = &mut meme;
+    new_meme.push_str("-seven 😛");
+    println!("{}", new_meme);
+    let test ="Hello";
+    let a = &test;
+    println!("{}",a);
+    println!("{}",test);
+    println!("{}", "-".repeat(100));
     // println!("Rust execution time: {:.4} ms", start.elapsed().as_secs_f64() * 1000.0);
 }
 
